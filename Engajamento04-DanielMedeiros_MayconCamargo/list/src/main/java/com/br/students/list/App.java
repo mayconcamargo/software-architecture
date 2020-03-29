@@ -3,16 +3,21 @@ package com.br.students.list;
 import java.util.*;
 import java.util.Scanner;
 
+
 public class App {
-    private static List<String> alunos;
+  //  private static List<String> alunos;
+    private static List<String> alunos = new ArrayList<String>();
     private static boolean run;
     private static Scanner scanner;
+  
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
-        alunos = new ArrayList<String>();
+     // alunos = new ArrayList<String>();
         run = true;
         carregarMenu();
+      //  Teste teste2 = App::exibirAlunos;
+      //  System.out.println(teste2.alunos(alunos));
     }
         
     private static void exibeMenu() {
@@ -59,7 +64,10 @@ public class App {
     }
     private static void exibirAlunos() {
         System.out.println("LISTA DE USUÁRIOS");
-        alunos.forEach(e -> System.out.println("NOME: " + e));
+        
+        // alunos.forEach(e -> System.out.println("NOME: " + e));
+          //method reference, deixando ainda mais simples
+           alunos.forEach(System.out::println);
         System.out.println("");	
     }
 }
